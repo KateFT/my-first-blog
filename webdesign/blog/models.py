@@ -17,3 +17,15 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+class Alumno (models.Model):
+    nombre = models.CharField(max_length=50)
+    apellidom = models.CharField(max_length=100)
+    apellidop = models.CharField(max_length=100)
+
+class Profesor (models.Model):
+    nombre=models.CharField(max_length=50)
+    materia=models.ForeignKey('Materia', on_delete=models.CASCADE)
+
+class Materia(models.Model):
+    nombre=models.CharField(max_length=50)
